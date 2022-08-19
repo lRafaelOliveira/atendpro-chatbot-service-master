@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "b231028a-e81d-4f1f-aaa8-04735d49f2f9",
+		"name": "NextBot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2644518"
+	},
+	"item": [
+		{
+			"name": "Get Single Bot",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://43g0t0ehga.execute-api.us-east-2.amazonaws.com/dev/bots/11963170983",
+					"protocol": "https",
+					"host": [
+						"43g0t0ehga",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"bots",
+						"11963170983"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Bots",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://43g0t0ehga.execute-api.us-east-2.amazonaws.com/dev/bots",
+					"protocol": "https",
+					"host": [
+						"43g0t0ehga",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"bots"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Bot",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "https://43g0t0ehga.execute-api.us-east-2.amazonaws.com/dev/bots/:phone",
+					"protocol": "https",
+					"host": [
+						"43g0t0ehga",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"bots",
+						":phone"
+					],
+					"variable": [
+						{
+							"key": "phone",
+							"value": "11963170983"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bot",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "https://43g0t0ehga.execute-api.us-east-2.amazonaws.com/dev/bots/:phone",
+					"protocol": "https",
+					"host": [
+						"43g0t0ehga",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"bots",
+						":phone"
+					],
+					"variable": [
+						{
+							"key": "phone",
+							"value": "11963170983"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Message to NLP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"from\": \"11994722298\",\r\n    \"to\": \"11963170983\",\r\n    \"message\": \"oi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://43g0t0ehga.execute-api.us-east-2.amazonaws.com/dev/nlp",
+					"protocol": "https",
+					"host": [
+						"43g0t0ehga",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"nlp"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

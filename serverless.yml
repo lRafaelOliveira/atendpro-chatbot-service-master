@@ -1,0 +1,29 @@
+service: aprendpro-nlp-service
+
+plugins:
+  # - serverless-plugin-typescript
+  # - serverless-plugin-optimize
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-2
+  stackName: aprendpro-nlp-service
+  deploymentMethod: direct
+  disableRollback: true
+  memorySize: 512
+  logRetentionInDays: 1
+  architecture: x86_64
+  environment:
+    APP_PORT: 8080
+    BUCKET_NAME: aprendpro-bots
+    REDIS_URL: atendpro-cache-service.mkwr76.ng.0001.use2.cache.amazonaws.com
+
+functions:
+ main:
+   handler: dist/main.handler
+   events:
+     - http:
+         method: any
+         path: /{any+}
