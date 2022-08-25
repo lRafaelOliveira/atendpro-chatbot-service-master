@@ -5,8 +5,10 @@ import { similarity } from '@nlpjs/similarity';
 import * as _ from 'lodash';
 import { BotManagerService } from 'src/bot-manager/bot-manager.service';
 
+
 @Injectable()
 export class NlpService {
+
     constructor(private cacheManagerService: CacheManagerService,
                 private botManagerService: BotManagerService) {
 
@@ -14,7 +16,6 @@ export class NlpService {
 
     private async getPublishedBot(userMessage: Message): Promise<any> {
         const existingBot = await this.cacheManagerService.getPublishedBot(userMessage.to);
-
         if (existingBot == null) {
            console.log('TRYING TO GET BOT FROM S3');
             const bot = await this.botManagerService.getBot(userMessage.to);
@@ -38,7 +39,6 @@ export class NlpService {
 
         const response = [];
         const activeSession = await this.cacheManagerService.getActiveSession(userMessage.from);
-
         if (!activeSession) {
             const root = bot.nodes["rootNode"];
             response.push(root);
@@ -86,4 +86,5 @@ export class NlpService {
             }
         }
     }
+    
 }

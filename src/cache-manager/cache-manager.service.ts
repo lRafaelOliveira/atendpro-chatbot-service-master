@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import Redis from 'ioredis';
 import { ClientSession } from 'src/models/client.session.model';
-
+require("dotenv").config()
 @Injectable()
 export class CacheManagerService {
     private client: Redis;

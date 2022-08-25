@@ -2,11 +2,11 @@ import { Body, Controller, Delete, Get, Param, Post, UploadedFile, UseIntercepto
 import { FileInterceptor } from '@nestjs/platform-express';
 import { BotManagerService } from './bot-manager.service';
 import { Express } from 'express';
+require("dotenv").config()
 
 @Controller('bots')
 export class BotManagerController {
     constructor(private service: BotManagerService) {
-
     }
 
     @Get(":phone")

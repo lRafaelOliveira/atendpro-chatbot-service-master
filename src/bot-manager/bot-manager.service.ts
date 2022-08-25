@@ -1,20 +1,17 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { 
-    S3Client, 
-    GetObjectCommand, 
-    ListObjectsCommand, 
-    PutObjectCommand,
-    DeleteObjectCommand
-} from "@aws-sdk/client-s3";
+import { S3Client, GetObjectCommand, ListObjectsCommand, PutObjectCommand,DeleteObjectCommand} from "@aws-sdk/client-s3";
 import * as _ from 'lodash';
+require("dotenv").config()
 
 @Injectable()
 export class BotManagerService {
     private client: S3Client;
     private bucketName: string = process.env.BUCKET_NAME || 'aprendpro-bots';
+    private region:string = process.env.AWS_DEFAULT_REGION|| 'us-east-1';
 
     constructor() {
         this.client = new S3Client({
+            region: this.region,
             apiVersion: '2006-03-01'
         });
     }
@@ -48,12 +45,13 @@ export class BotManagerService {
         const cmd = new ListObjectsCommand({
             Bucket: this.bucketName
         });
-
         try {
             const data =  await this.client.send(cmd);
+            console.log(data)
             return _.filter(data.Contents, (c) => /[\d]{11}\/bot.json$/.test(c.Key))
                     .map(e => e.Key.replace('/bot.json', ''));
         } catch(error) {
+            // console.log(error)
             throw new HttpException(error.message, HttpStatus.BAD_REQUEST)
         }
     }
