@@ -9,11 +9,12 @@ export class CacheManagerService {
     constructor() {
         this.client = new Redis({
             host: process.env.REDIS_URL,
-            port: 6379
+            port: parseInt(process.env.REDIS_PORT)
         });
 
         this.client.on('error', function (error) {
             console.dir(error)
+            return
         });
 
         this.client.on('connect', () => {
