@@ -1,0 +1,202 @@
+{
+    "language": "pt",
+    "greetings": [],
+    "nodes": {
+        "rootNode": {
+            "id": "a607e831-57ab-44b8-a995-9453309e0588",
+            "type": "text",
+            "name": "welcome",
+            "text": "Olá, eu sou assistente virtual da Claro 😎",
+            "next": "fb67d42e-9a09-46c8-b80d-ef7df620c831"
+        },
+        "fb67d42e-9a09-46c8-b80d-ef7df620c831": {
+            "id": "fb67d42e-9a09-46c8-b80d-ef7df620c831",
+            "type": "text",
+            "name": "step1",
+            "text": "Você já é nosso cliente?",
+            "next": "fb67d42e-9a09-46c8-b80d-ef7df620c834"
+        },
+         "fb67d42e-9a09-46c8-b80d-ef7df620c834": {
+            "id": "fb67d42e-9a09-46c8-b80d-ef7df620c834",
+            "type": "text",
+            "name": "step1",
+            "text": "Digite uma das opções que deseja",
+            "next": "b418612b-8f27-42a8-8748-aaa29e85bebd"
+        },
+        "b418612b-8f27-42a8-8748-aaa29e85bebd": {
+            "id": "b418612b-8f27-42a8-8748-aaa29e85bebd",
+            "type": "options",
+            "name": "option1",
+            "options": [{
+                "id": "89f01d57-0e4b-469f-9ad7-546517bbc073",
+                "name": "choice1",
+                "text": "Sim, já sou cliente",
+                "next": "faf52257-d212-46ff-b0ea-a1f57dd0ba5d"
+            }, {
+                "id": "b53dc3f0-79f1-4d16-bcda-2d91c1b3b218",
+                "name": "choice2",
+                "text": "Ainda não sou cliente",
+                "next": "b53dc3f0-79f1-4d16-bcda-2d91c1b3b218"
+            }]
+        }, 
+        "faf52257-d212-46ff-b0ea-a1f57dd0ba5d": {
+            "id": "faf52257-d212-46ff-b0ea-a1f57dd0ba5d",
+            "type": "text",
+            "name": "result1",
+            "text": "Que Otimo, mas infelizmente não Consigo te Ajudar a partir daqui.\n Por Favor, entre em contato através do fone 10621",
+            "next": null,
+            "end": true
+        },
+        "b53dc3f0-79f1-4d16-bcda-2d91c1b3b218": {
+            "id": "b53dc3f0-79f1-4d16-bcda-2d91c1b3b218",
+            "type": "text",
+            "name": "result1",
+            "text": "Antes de eu te mostrar as ofertas, escolha qual tipo de serviço você está buscando",
+            "next": "369ab121-54fc-445e-8df8-db9a71da560b"
+        },
+        "369ab121-54fc-445e-8df8-db9a71da560b": {
+            "id": "369ab121-54fc-445e-8df8-db9a71da560b",
+            "type": "text",
+            "name": "result1",
+            "text": "Digite uma das opções que deseja:",
+            "next": "f61c5d9d-da56-485d-8080-fc9b1189ad23"
+        },
+        "f61c5d9d-da56-485d-8080-fc9b1189ad23": {
+            "id": "f61c5d9d-da56-485d-8080-fc9b1189ad23",
+            "type": "options",
+            "name": "option1",
+            "options": [{
+                "id": "9aefca6f-6c62-4267-9fd4-33350aec608d",
+                "name": "choice1",
+                "text": "Pra casa (Internet, TV, Telefone) 🏠",
+                "next": "b92c3524-fce7-42dd-bfe1-b71cb87efb81"
+            }, {
+                "id": "4a446bed-b992-4015-92d4-3965145bdc8e",
+                "name": "choice2",
+                "text": "Pro celular (Pós-Pago) 📱",
+                "next": "bf8f626b-b376-4c96-ab9b-8f4d9abc8c3e"
+            }]
+        },
+        "b92c3524-fce7-42dd-bfe1-b71cb87efb81": {
+            "id": "b92c3524-fce7-42dd-bfe1-b71cb87efb81",
+            "type": "question",
+            "name": "result1",
+            "text": "Agora, preciso que você digite seu CEP (somente números) pra que eu consulte quais ofertas estão disponíveis na sua região. Exemplo: 04808252",
+            "next": "3695b121-54fc-445e-89f8-db9a71da560b"
+        },
+        "3695b121-54fc-445e-89f8-db9a71da560b": {
+            "id": "3695b121-54fc-445e-89f8-db9a71da560b",
+            "type": "text",
+            "name": "cep_encontrado",
+            "extra":true,
+            "text": "Encontrei este endereço pro CEP informado:",
+            "next": "5basfas121-54fc-445e-89fasff8-db9a7160b"
+        },
+        "5basfas121-54fc-445e-89fasff8-db9a7160b": {
+            "id": "5basfas121-54fc-445e-89fasff8-db9a7160bb",
+            "type": "text",
+            "name": "cep_encontrad2",
+            "extra":true,
+            "text": "CEP: 74865-090\nLogradouro: Avenida Doutor José Hermano\nBairro: Jardim Vitória\nCidade: Goiânia\nUF: GO",
+            "next": "3695b121-54fc-995e-89f8-db9a71da560b"
+        },
+        "3695b121-54fc-995e-89f8-db9a71da560b": {
+            "id": "3695b121-54fc-995e-89f8-db9a71da560b",
+            "type": "options",
+            "name": "option1",
+            "options": [{
+                "id": "9aefca6f-6cd4-333c608d",
+                "name": "choice1",
+                "text": "Sim, continuar",
+                "next": "bf26b-b376-4c96-ab9b-8c3e"
+            }, {
+                "id": "bed-b992-404-39651dc8e",
+                "name": "choice2",
+                "text": "Não, editar",
+                "next": "b92c3524-fce7-42dd-bfe1-b71cb87efb81"
+            }]
+        },
+        "bf26b-b376-4c96-ab9b-8c3e": {
+            "id": "bf26b-b376-4c96-ab9b-8c3e",
+            "type": "text",
+            "name": "result1",
+            "text": "Maravilha, Vou Te Mostrar Os planos de Internet Disponiveis",
+            "next": "36121-54fc-995e-89f8-db9560b"
+        },
+        "36121-54fc-995e-89f8-db9560b": {
+            "id": "3695b121-54fc-995e-89f8-db9a71da560b",
+            "type": "options",
+            "name": "option1",
+            "options": [{
+                "id": "9ca6f-6cd4-33d",
+                "name": "choice1",
+                "text": "250M FIBRA 99,90",
+                "next": "b92c3524-fce7-52dd-bfe1-b71cb87efb81"
+            }, {
+                "id": "bed-b992-404-3dc",
+                "name": "choice2",
+                "text": "350M 129,99",
+                "next": "b92c3524-fce7-52dd-bfe1-b71cb87efb81"
+            }]
+        },
+        "bf8f626b-b376-4c96-ab9b-8f4d9abc8c3e": {
+            "id": "bf8f626b-b376-4c96-ab9b-8f4d9abc8c3e",
+            "type": "text",
+            "name": "result1",
+            "text": "Maravilha, Vou Te Mostrar Os planos Disponiveis",
+            "next": "f61c5d9d-da56-485d-8080-fc9b1189ad21"
+        },
+        "f61c5d9d-da56-485d-8080-fc9b1189ad21": {
+            "id": "f61c5d9d-da56-485d-8080-fc9b1189ad21",
+            "type": "options",
+            "name": "option1",
+            "options": [{
+                "id": "9aefca6f-6c62-4267-9fd4-33350aec6081",
+                "name": "choice1",
+                "text": "Movel 15G 📱",
+                "next": "b92c3524-fce7-52dd-bfe1-b71cb87efb81"
+            }, {
+                "id": "4a446bed-b992-4015-92d4-3965145bdc81",
+                "name": "choice2",
+                "text": "Movel 10G 📱",
+                "next": "b92c3524-fce7-52dd-bfe1-b71cb87efb81"
+            }]
+        },
+        "b92c3524-fce7-52dd-bfe1-b71cb87efb81": {
+            "id": "b92c3524-fce7-52dd-bfe1-b71cb87efb81",
+            "type": "text",
+            "name": "result1",
+            "text": "Otimo, vamos Fechar seu Pacote Agora!",
+            "next": "b92c3524-6ce7-52dd-bfe1-b71cb87efb81"
+        },
+        "b92c3524-6ce7-52dd-bfe1-b71cb87efb81": {
+            "id": "b92c3524-fce7-52dd-bfe1-b71cb87efb81",
+            "type": "text",
+            "name": "result1",
+            "text": "Vou Precisar de Alguns Dados Seus Para Continuar!",
+            "next": "f1c5d9d-da56-485d-8080-fc9b1189ad21"
+        },
+        "f1c5d9d-da56-485d-8080-fc9b1189ad21": {
+            "id": "b92c3524-fce7-52dd-bfe1-b71cb87efb81",
+            "type": "question",
+            "name": "result1",
+            "text": "Por Favor me Informe se Nome Completo:",
+            "next": "f1c5d9-da56-485d-8080-fc9b1189ad21"
+        },
+        "f1c5d9-da56-485d-8080-fc9b1189ad21": {
+            "id": "b92c3524-fce7-52dd-bfe1-b71cb87efb81",
+            "type": "question",
+            "name": "result1",
+            "text": "Agora me Informe Seu Cpf: \n *(não se preocupe, todos os dados são criptografados)*",
+            "next": "f1c5d-da56-485d-8080-fc9b1189ad21"
+        },
+        "f1c5d-da56-485d-8080-fc9b1189ad21": {
+            "id": "b92c3524-fce7-52dd-bfe1-b71cb87efb81",
+            "type": "question",
+            "name": "result1",
+            "text": "Maravilha, Em breve entremos em contato para confirmar essas informações.",
+            "next": null,
+            "end":true
+        }
+    }
+}
